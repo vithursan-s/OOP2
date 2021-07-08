@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TeacherDashboardController">
+   <children>
+      <ButtonBar prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #0C71E0;">
+         <buttons>
+            <AnchorPane prefHeight="40.0" prefWidth="619.0">
+               <children>
+                  <Button layoutX="496.0" layoutY="8.0" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onLogOut" prefHeight="25.0" prefWidth="371.0" text="LOG OUT" />
+                  <Label fx:id="lblUsername" layoutY="12.0" minWidth="49.0" prefHeight="17.0" text="USERNAME" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </buttons>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </ButtonBar>
+      <TabPane fx:id="tabPane" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#onExamTab" text="Exam">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="14.0" text="Create Exam">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="43.0" text="Name" />
+                        <TextField fx:id="txtExamName" layoutX="72.0" layoutY="39.0" prefHeight="25.0" prefWidth="141.0" />
+                        <Label layoutX="14.0" layoutY="76.0" text="Activity" />
+                        <TextField fx:id="txtExamActivity" layoutX="72.0" layoutY="72.0" prefHeight="25.0" prefWidth="141.0" />
+                        <Label layoutX="231.0" layoutY="110.0" text="No. Questins" />
+                        <TextField fx:id="txtQuestionAmount" layoutX="309.0" layoutY="106.0" prefHeight="25.0" prefWidth="124.0" />
+                        <Label layoutX="231.0" layoutY="43.0" text="Login" />
+                        <TextField fx:id="txtExamLogin" layoutX="308.0" layoutY="39.0" prefHeight="25.0" prefWidth="124.0" />
+                        <Label layoutX="231.0" layoutY="76.0" text="Passcode" />
+                        <TextField fx:id="txtExamPasscode" layoutX="309.0" layoutY="72.0" prefHeight="25.0" prefWidth="124.0" />
+                        <Label layoutX="14.0" layoutY="110.0" text="Date Due" />
+                        <DatePicker fx:id="examDatePicker" layoutX="72.0" layoutY="106.0" prefHeight="25.0" prefWidth="142.0" />
+                        <Button layoutX="458.0" layoutY="106.0" mnemonicParsing="false" onAction="#onAddExam" prefHeight="25.0" prefWidth="118.0" text="Add Exam" />
+                        <Button layoutX="488.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Add Questions" />
+                        <Label layoutX="12.0" layoutY="139.0" text="Update And Delete Exam">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="161.0" prefHeight="25.0" prefWidth="414.0" promptText="Enter Value and Press ENTER" />
+                        <ComboBox layoutX="437.0" layoutY="161.0" prefWidth="150.0" />
+                        <ListView layoutX="14.0" layoutY="192.0" prefHeight="80.0" prefWidth="572.0" />
+                        <Label layoutX="12.0" layoutY="297.0" text="Question by Exam ID">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="322.0" prefHeight="25.0" prefWidth="447.0" promptText="Enter Value and Press ENTER" />
+                        <Button layoutX="486.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Update Exam" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#onMarksTab" text="Mark">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="414.0" promptText="Enter Value and Press ENTER" />
+                        <ComboBox layoutX="436.0" layoutY="14.0" prefWidth="150.0" />
+                        <ListView layoutX="14.0" layoutY="47.0" prefHeight="138.0" prefWidth="573.0" />
+                        <Label layoutX="14.0" layoutY="226.0" text="Given Answer" />
+                        <TextArea layoutX="14.0" layoutY="243.0" prefHeight="79.0" prefWidth="572.0" />
+                        <Button layoutX="511.0" layoutY="332.0" mnemonicParsing="false" text="Add Marks" />
+                        <Button layoutX="410.0" layoutY="332.0" mnemonicParsing="false" text="Update Marks" />
+                        <Label layoutX="14.0" layoutY="336.0" text="Marks" />
+                        <TextField layoutX="52.0" layoutY="332.0" />
+                        <Button layoutX="510.0" layoutY="186.0" mnemonicParsing="false" text="Get Answer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab onSelectionChanged="#onFeedbackTab" text="Feedback">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="414.0" promptText="Enter Value and Press ENTER" />
+                        <ComboBox layoutX="436.0" layoutY="14.0" prefWidth="150.0" />
+                        <ListView layoutX="14.0" layoutY="47.0" prefHeight="154.0" prefWidth="573.0" />
+                        <Label layoutX="14.0" layoutY="226.0" text="Add Feedback" />
+                        <TextArea layoutX="14.0" layoutY="243.0" prefHeight="79.0" prefWidth="572.0" />
+                        <Button layoutX="494.0" layoutY="332.0" mnemonicParsing="false" text="Add Feedback" />
+                        <Button layoutX="371.0" layoutY="332.0" mnemonicParsing="false" text="Update Feedback" />
+                        <Button layoutX="255.0" layoutY="332.0" mnemonicParsing="false" text="Delate Feedback" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab onSelectionChanged="#onStatsTab" text="Stats">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="528.0" prefWidth="586.0">
+                           <children>
+                              <BarChart layoutX="7.0" layoutY="14.0" prefHeight="231.0" prefWidth="573.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                              <PieChart layoutX="14.0" layoutY="264.0" prefHeight="230.0" prefWidth="287.0" />
+                              <BarChart layoutX="301.0" layoutY="264.0" prefHeight="247.0" prefWidth="309.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
